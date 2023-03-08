@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { VerticalLine } from '../VerticalLine/VerticalLine';
-import classes from './MenuLinks.module.css';
+import styles from './MenuLinks.module.css';
 
 export const MenuLinks = () => {
   return (
-    <div className={classes.menu}>
+    <div className={styles.menu}>
       <NavLink
-        className={({ isActive }) => (isActive ? classes.active : undefined)}
+        className={({ isActive }) => (isActive ? styles.active : undefined)}
         to={'/budget'}
         end
       >
@@ -14,7 +14,7 @@ export const MenuLinks = () => {
       </NavLink>
       <VerticalLine />
       <NavLink
-        className={({ isActive }) => (isActive ? classes.active : undefined)}
+        className={({ isActive }) => (isActive ? styles.active : undefined)}
         to={'/transaction-history'}
         end
       >

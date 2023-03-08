@@ -4,13 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 10px auto 30px;
 }
 
 a {
   font-size: 32px;
   text-decoration: none;
-  color: black;
+  color: var(--black);
   padding: 0 20px;
 }
 

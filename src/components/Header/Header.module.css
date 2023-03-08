@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px 100px;
+  border-radius: 30px;
+  border: 6px solid var(--color-darkerLightGreen);
+  background-color: var(--color-lightGreen);
+}
+
+.header {
+  font-size: 50px;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 14px;
+}

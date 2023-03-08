@@ -1,3 +1,9 @@
+import { Income } from '../../components/Income';
+
 export const Budget = () => {
-  return <div>Budget</div>;
+  return (
+    <div>
+      <Income />
+    </div>
+  );
 };

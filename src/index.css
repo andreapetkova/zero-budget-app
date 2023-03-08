@@ -1,5 +1,19 @@
+html {
+  --magenta: '#ff005e';
+  --orange: '#f09900';
+  --red: '#e61719';
+  --lightGreen: '#40bf00';
+  --white: '#ffffff';
+  --lavenderGrey: '#c1c9d0';
+  --black: '#000000';
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   font-family: 'Asap Condensed', sans-serif;
+}
+
+* {
+  margin: 0;
 }
