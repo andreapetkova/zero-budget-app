@@ -1,0 +1,12 @@
+.income-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 400;
+  margin-right: 20px;
+  text-decoration: underline;
+}

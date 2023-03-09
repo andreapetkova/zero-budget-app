@@ -17,6 +17,7 @@
 }
 
 .subtitle {
-  font-style: italic;
+  font-family: 'Rubik Mono One', sans-serif;
   font-size: 14px;
+  font-weight: 600;
 }

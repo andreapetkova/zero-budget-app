@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.input-label {
+  color: var(--color-grey);
+}
+
+.submit-button {
+  background-color: var(--color-darkerLightGreen);
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.disabled-button {
+  background-color: var(--color-lavenderGrey);
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.submit-button:hover {
+  background-color: var(--color-lightGreen);
+  color: var(--color-white);
+}
+
+.icon {
+  padding: 12px 0px;
+}
