@@ -1,0 +1,13 @@
+.emergency-fund {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-direction: column;
+  width: 20%;
+  border: 2px solid var(--color-magenta);
+  border-radius: 30px;
+  padding: 40px;
+  margin-right: 50px;
+  background-color: var(--color-white);
+}

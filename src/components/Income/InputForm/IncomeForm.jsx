@@ -13,13 +13,17 @@ export const IncomeForm = () => {
   const onSubmit = event => {
     event.preventDefault();
 
-    const salary = Number(document.getElementById('salary').value);
-    const extraIncome = Number(document.getElementById('extraIncome').value);
+    const salary = document.getElementById('salary');
+    const extraIncome = document.getElementById('extraIncome');
+    const total = Number(salary.value) + Number(extraIncome.value);
     const form = document.getElementById('incomeForm');
 
-    setTotalIncome(salary + extraIncome);
-    handleSetAmountLeft(salary + extraIncome);
+    setTotalIncome(total);
+    handleSetAmountLeft(total);
     setDisabled(true);
+
+    salary.disabled = true;
+    extraIncome.disabled = true;
     form.reset();
   };
 

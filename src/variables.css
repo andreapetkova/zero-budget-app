@@ -1,11 +1,15 @@
 :root {
-  --color-magenta: #ff005e;
+  --color-magenta: #ff4489;
+  --color-lightestMagenta: #ffeff5;
   --color-orange: #f09900;
+  --color-lightestOrange: #fff8eb;
   --color-red: #e61719;
   --color-lightGreen: #bcf1a1;
+  --color-lightestGreen: #f4ffef;
   --color-darkerLightGreen: #99e274;
   --color-white: #ffffff;
   --color-lavenderGrey: #c1c9d0;
+  --color-lightestGrey: #f1f7fd;
   --color-grey: #727577;
   --color-black: #000000;
 }

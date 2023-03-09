@@ -17,3 +17,8 @@ body {
 * {
   margin: 0;
 }
+
+input[type='text'][disabled] {
+  background-color: var(--color-lightestGrey);
+  color: var(--color-grey);
+}
