@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { CategorySavingsTable } from '../../components/CategoryTable/CategorySavingsTable';
 import { CategoryTable } from '../../components/CategoryTable/CategoryTable';
 import { Income } from '../../components/Income';
@@ -11,18 +12,21 @@ import { mockWantsCategories } from '../../mock/mockWantsCategories';
 import styles from './Budget.module.css';
 
 export const Budget = () => {
+  const [openBudget, setOpenBudget] = useState(false);
   return (
     <IncomeContextProvider>
-      <Income />
-      <div className={styles['flex-grid']}>
-        <CategoryTable title={'needs'} items={mockNeedsCategories} />
-        <CategoryTable title={'wants'} items={mockWantsCategories} />
-        <CategorySavingsTable
-          title={'savings'}
-          generalItems={mockSavingsGeneralCategories}
-          secondaryItems={mockSavingsSecondaryCategories}
-        />
-      </div>
+      <Income createBudget={setOpenBudget} />
+      {openBudget && (
+        <div className={styles['flex-grid']}>
+          <CategoryTable title={'needs'} items={mockNeedsCategories} />
+          <CategoryTable title={'wants'} items={mockWantsCategories} />
+          <CategorySavingsTable
+            title={'savings'}
+            generalItems={mockSavingsGeneralCategories}
+            secondaryItems={mockSavingsSecondaryCategories}
+          />
+        </div>
+      )}
     </IncomeContextProvider>
   );
 };

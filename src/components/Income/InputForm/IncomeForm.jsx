@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { IncomeLeftInputField, InputField } from '../InputField';
 import { useIncomeContext } from '../../../context/IncomeContext.context';
 
-export const IncomeForm = () => {
-  const { amountLeft, handleSetAmountLeft } = useIncomeContext();
+export const IncomeForm = ({ createBudget }) => {
+  const { amountLeft, handleSetAmountLeft, handleSetOpenBudget } = useIncomeContext();
 
   const [totalIncome, setTotalIncome] = useState(null);
-  const [disabled, setDisabled] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = event => {
     event.preventDefault();
@@ -19,8 +19,9 @@ export const IncomeForm = () => {
     const form = document.getElementById('incomeForm');
 
     setTotalIncome(total);
-    handleSetAmountLeft(total);
-    setDisabled(true);
+    handleSetAmountLeft(null, total);
+    createBudget(true);
+    setSubmitted(true);
 
     salary.disabled = true;
     extraIncome.disabled = true;
@@ -29,19 +30,17 @@ export const IncomeForm = () => {
 
   return (
     <form className={styles.form} id='incomeForm'>
-      <InputField title={'salary'} />
+      {!submitted && (
+        <>
+          <InputField title={'salary'} />
+          <AiOutlinePlus className={styles.icon} />
+          <InputField title={'extra income'} />
 
-      <AiOutlinePlus className={styles.icon} />
-
-      <InputField title={'extra income'} />
-
-      <button
-        disabled={totalIncome}
-        className={disabled ? styles['disabled-button'] : styles['submit-button']}
-        onClick={onSubmit}
-      >
-        Add
-      </button>
+          <button disabled={totalIncome} className={styles['submit-button']} onClick={onSubmit}>
+            Create Budget
+          </button>
+        </>
+      )}
 
       {totalIncome && (
         <>

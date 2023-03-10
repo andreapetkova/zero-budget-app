@@ -7,7 +7,7 @@ export const CategorySavingsTable = ({ title, generalItems, secondaryItems }) =>
   let inputStyle = `${styles.container} + ' ' + ${styles.savings}`;
 
   return (
-    <div className={inputStyle}>
+    <form className={inputStyle}>
       <Title title={title} />
       <div className={styles['savings-container']}>
         <div className={styles['general-savings']}>
@@ -21,6 +21,6 @@ export const CategorySavingsTable = ({ title, generalItems, secondaryItems }) =>
         </div>
         <EmergencyFund />
       </div>
-    </div>
+    </form>
   );
 };

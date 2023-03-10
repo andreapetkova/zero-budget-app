@@ -20,11 +20,11 @@ export const CategoryTable = ({ title, items }) => {
   }
 
   return (
-    <div className={inputStyle}>
+    <form className={inputStyle}>
       <Title title={title} />
       {items.map(category => (
         <CategoryItem title={category} key={Math.random()} />
       ))}
-    </div>
+    </form>
   );
 };
