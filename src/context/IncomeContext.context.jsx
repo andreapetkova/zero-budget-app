@@ -2,14 +2,11 @@ import { createContext, useContext, useState } from 'react';
 
 const IncomeContext = createContext({
   amountLeft: null,
-  openBudget: false,
-  handleSetOpenBudget: () => undefined,
   handleSetAmountLeft: () => undefined,
 });
 
 export const IncomeContextProvider = ({ children }) => {
   const [amountLeft, setAmountLeft] = useState(null);
-  const [openBudget, setOpenBudget] = useState(false);
 
   const handleSetAmountLeft = (amount, initialAmount) => {
     if (initialAmount) {
@@ -23,14 +20,8 @@ export const IncomeContextProvider = ({ children }) => {
     }
   };
 
-  const handleSetOpenBudget = () => {
-    setOpenBudget(true);
-  };
-
   return (
-    <IncomeContext.Provider
-      value={{ amountLeft, handleSetAmountLeft, openBudget, handleSetOpenBudget }}
-    >
+    <IncomeContext.Provider value={{ amountLeft, handleSetAmountLeft }}>
       {children}
     </IncomeContext.Provider>
   );

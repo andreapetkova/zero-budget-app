@@ -5,7 +5,7 @@ import { IncomeLeftInputField, InputField } from '../InputField';
 import { useIncomeContext } from '../../../context/IncomeContext.context';
 
 export const IncomeForm = ({ createBudget }) => {
-  const { amountLeft, handleSetAmountLeft, handleSetOpenBudget } = useIncomeContext();
+  const { amountLeft, handleSetAmountLeft } = useIncomeContext();
 
   const [totalIncome, setTotalIncome] = useState(null);
   const [submitted, setSubmitted] = useState(false);
