@@ -1,0 +1,35 @@
+{
+  "budget": {
+    "needs": {
+      "Groceries": { "limit": 0, "currentlySpent": 0 },
+      "Electricity": { "limit": 0, "currentlySpent": 0 },
+      "Water": { "limit": 0, "currentlySpent": 0 },
+      "TV + Net": { "limit": 0, "currentlySpent": 0 },
+      "Net Tablet": { "limit": 0, "currentlySpent": 0 },
+      "Petrol": { "limit": 0, "currentlySpent": 0 }
+    },
+    "wants": {
+      "Going Out": { "limit": 0, "currentlySpent": 0 },
+      "Take Out": { "limit": 0, "currentlySpent": 0 },
+      "Skin Care": { "limit": 0, "currentlySpent": 0 },
+      "Clothes": { "limit": 0, "currentlySpent": 0 }
+    },
+    "savings": {
+      "Christmas": { "limit": 0, "currentlySpent": 0 },
+      "Mom's Birthday": { "limit": 0, "currentlySpent": 0 },
+      "Dad's Birthday": { "limit": 0, "currentlySpent": 0 },
+      "Lubo's Birthday": { "limit": 0, "currentlySpent": 0 },
+      "Summer Vacation": { "limit": 0, "currentlySpent": 0 }
+    }
+  },
+  "expenses": [
+    { "id": 0, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
+    { "id": 1, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 },
+    { "id": 2, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
+    { "id": 3, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 },
+    { "id": 4, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
+    { "id": 5, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 },
+    { "id": 6, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
+    { "id": 7, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 }
+  ]
+}
