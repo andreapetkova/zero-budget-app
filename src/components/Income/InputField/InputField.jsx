@@ -1,23 +1,10 @@
-import { stringFormattingForInputId } from '../../../helpers/stringFormattingForInputId';
-import { stringFormattingForInputTitle } from '../../../helpers/stringFormattingForInputTitle';
+import { stringFormattingForInputId } from '../../../helpers';
+import { stringFormattingForInputTitle } from '../../../helpers';
 import styles from './InputField.module.css';
 
-export const InputField = ({ type, title, defaultValue, onChange }) => {
+export const InputField = ({ title, value, onChange, onBlur, error }) => {
   const labelTitle = stringFormattingForInputTitle(title);
   const idTitle = stringFormattingForInputId(title);
-
-  let inputStyle = styles['input-field'];
-  switch (type) {
-    case 'total':
-      inputStyle += ` ${styles['input-field-total']}`;
-      break;
-    case 'incomeLeft':
-      inputStyle += ` ${styles['input-field-income-left']}`;
-      break;
-
-    default:
-      break;
-  }
 
   return (
     <div className={styles['form-input']}>
@@ -26,10 +13,12 @@ export const InputField = ({ type, title, defaultValue, onChange }) => {
         type='text'
         name={idTitle}
         id={idTitle}
-        className={inputStyle}
-        defaultValue={defaultValue}
-        onBlur={onChange}
+        className={styles['input-field']}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };

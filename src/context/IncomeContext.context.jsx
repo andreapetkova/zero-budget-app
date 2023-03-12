@@ -1,40 +1,42 @@
 import { createContext, useContext, useState } from 'react';
 
-const BudgetContext = createContext({
-  openBudget: false,
-  handleOpenBudget: () => undefined,
-  handleCloseBudget: () => undefined,
+const IncomeContext = createContext({
+  amountLeft: null,
+  handleSetAmountLeft: () => undefined,
 });
 
-export const BudgetContextProvider = ({ children }) => {
-  const [openBudget, setOpenBudget] = useState(false);
+export const IncomeContextProvider = ({ children }) => {
+  const [amountLeft, setAmountLeft] = useState(null);
 
-  const handleOpenBudget = () => {
-    setOpenBudget(true);
-  };
-
-  const handleCloseBudget = () => {
-    setOpenBudget(false);
+  const handleSetAmountLeft = (amount, initialAmount) => {
+    if (initialAmount) {
+      setAmountLeft(initialAmount);
+      return;
+    }
+    if (amountLeft - amount < 0) {
+      throw new Error('Amount cannot be more that Income Left!');
+    } else {
+      setAmountLeft(prevAmount => prevAmount - amount);
+    }
   };
 
   return (
-    <BudgetContext.Provider
+    <IncomeContext.Provider
       value={{
-        openBudget,
-        handleOpenBudget,
-        handleCloseBudget,
+        amountLeft,
+        handleSetAmountLeft,
       }}
     >
       {children}
-    </BudgetContext.Provider>
+    </IncomeContext.Provider>
   );
 };
 
-export const useBudgetContext = () => {
-  const context = useContext(BudgetContext);
+export const useIncomeContext = () => {
+  const context = useContext(IncomeContext);
 
   if (!context) {
-    throw new Error('useBudgetContext must be used within BudgetContextProvider');
+    throw new Error('useIncomeContext must be used within IncomeContextProvider');
   }
 
   return context;

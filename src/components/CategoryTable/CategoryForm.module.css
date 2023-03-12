@@ -2,6 +2,9 @@
   padding: 20px;
   border-radius: 20px;
   width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .needs {
@@ -32,4 +35,23 @@
 
 .general-savings {
   width: 100%;
+}
+
+.submit-button {
+  background-color: var(--color-lightGreen);
+  border: 2px solid var(--color-darkerLightGreen);
+  width: 200px;
+  border-radius: 24px;
+  padding: 12px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-top: 50px;
+  align-self: center;
+}
+
+.submit-button:hover {
+  background-color: var(--color-lightGreen);
+  color: var(--color-white);
 }

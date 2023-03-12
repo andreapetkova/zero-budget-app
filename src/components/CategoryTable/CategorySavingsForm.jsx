@@ -15,7 +15,7 @@ export const CategorySavingsTable = ({ title, primaryItems, secondaryItems }) =>
             <CategoryItem title={category} key={Math.random()} />
           ))}
           <hr />
-          {Object.keys(primaryItems).map(category => (
+          {Object.keys(secondaryItems).map(category => (
             <CategoryItem title={category} key={Math.random()} />
           ))}
         </div>

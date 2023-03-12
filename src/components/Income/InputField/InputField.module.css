@@ -14,22 +14,8 @@
   text-align: center;
 }
 
-.input-field-total {
-  padding: 7px;
-  width: 100px;
-  background-color: var(--color-orange);
-  border: none;
-  color: var(--color-white);
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.input-field-income-left {
-  padding: 7px;
-  width: 100px;
-  border-radius: 30px;
-  border: 2px solid var(--color-darkerLightGreen);
-  color: var(--color-darkerLightGreen);
-  font-weight: 600;
-  font-size: 20px;
+.error {
+  width: 150px;
+  text-align: center;
+  color: var(--color-red);
 }

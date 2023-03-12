@@ -1,5 +1,5 @@
 import { useIncomeContext } from '../../../context';
-import { stringFormattingForInputId } from '../../../helpers/stringFormattingForInputId';
+import { stringFormattingForInputId } from '../../../helpers';
 import { InputField } from '../../Income/InputField';
 import { Title } from '../../Title/Title';
 import styles from './EmergencyFund.module.css';

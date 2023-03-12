@@ -4,24 +4,24 @@
       "Groceries": { "limit": 0, "currentlySpent": 0 },
       "Electricity": { "limit": 0, "currentlySpent": 0 },
       "Water": { "limit": 0, "currentlySpent": 0 },
-      "TV + Net": { "limit": 0, "currentlySpent": 0 },
-      "Net Tablet": { "limit": 0, "currentlySpent": 0 },
+      "TV+Net": { "limit": 0, "currentlySpent": 0 },
+      "NetTablet": { "limit": 0, "currentlySpent": 0 },
       "Petrol": { "limit": 0, "currentlySpent": 0 }
     },
     "wants": {
-      "Going Out": { "limit": 0, "currentlySpent": 0 },
-      "Take Out": { "limit": 0, "currentlySpent": 0 },
-      "Skin Care": { "limit": 0, "currentlySpent": 0 },
+      "GoingOut": { "limit": 0, "currentlySpent": 0 },
+      "TakeOut": { "limit": 0, "currentlySpent": 0 },
+      "SkinCare": { "limit": 0, "currentlySpent": 0 },
       "Clothes": { "limit": 0, "currentlySpent": 0 }
     },
     "savings": {
-      "primary": { "General Savings": 0, "Investments": 0 },
+      "primary": { "GeneralSavings": 0, "Investments": 0 },
       "secondary": {
         "Christmas": 0,
-        "Mom's Birthday": 0,
-        "Dad's Birthday": 0,
-        "Lubo's Birthday": 0,
-        "Summer Vacation": 0
+        "Mom'sBirthday": 0,
+        "Dad'sBirthday": 0,
+        "Lubo'sBirthday": 0,
+        "SummerVacation": 0
       }
     }
   },
