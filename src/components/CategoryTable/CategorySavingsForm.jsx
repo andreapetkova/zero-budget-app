@@ -1,9 +1,9 @@
 import { Title } from '../Title/Title';
 import { CategoryItem } from './CategoryItem/CategoryItem';
-import styles from './CategoryTable.module.css';
+import styles from './CategoryForm.module.css';
 import { EmergencyFund } from './EmergencyFund';
 
-export const CategorySavingsTable = ({ title, generalItems, secondaryItems }) => {
+export const CategorySavingsTable = ({ title, primaryItems, secondaryItems }) => {
   let inputStyle = `${styles.container} + ' ' + ${styles.savings}`;
 
   return (
@@ -11,11 +11,11 @@ export const CategorySavingsTable = ({ title, generalItems, secondaryItems }) =>
       <Title title={title} />
       <div className={styles['savings-container']}>
         <div className={styles['general-savings']}>
-          {generalItems.map(category => (
+          {Object.keys(primaryItems).map(category => (
             <CategoryItem title={category} key={Math.random()} />
           ))}
           <hr />
-          {secondaryItems.map(category => (
+          {Object.keys(primaryItems).map(category => (
             <CategoryItem title={category} key={Math.random()} />
           ))}
         </div>

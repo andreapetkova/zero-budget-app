@@ -1,8 +1,8 @@
 import { Title } from '../Title/Title';
 import { CategoryItem } from './CategoryItem/CategoryItem';
-import styles from './CategoryTable.module.css';
+import styles from './CategoryForm.module.css';
 
-export const CategoryTable = ({ title, items }) => {
+export const CategoryForm = ({ title, items }) => {
   let inputStyle = styles.container;
 
   switch (title) {
@@ -19,10 +19,11 @@ export const CategoryTable = ({ title, items }) => {
       break;
   }
 
+  const categoryNames = Object.keys(items);
   return (
     <form className={inputStyle}>
       <Title title={title} />
-      {items.map(category => (
+      {categoryNames.map(category => (
         <CategoryItem title={category} key={Math.random()} />
       ))}
     </form>

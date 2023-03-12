@@ -2,10 +2,11 @@ import styles from './IncomeForm.module.css';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { useState } from 'react';
 import { IncomeLeftInputField, InputField } from '../InputField';
-import { useIncomeContext } from '../../../context/IncomeContext.context';
+import { useBudgetContext, useIncomeContext } from '../../../context';
 
-export const IncomeForm = ({ createBudget }) => {
+export const IncomeForm = () => {
   const { amountLeft, handleSetAmountLeft } = useIncomeContext();
+  const { handleOpenBudget } = useBudgetContext();
 
   const [totalIncome, setTotalIncome] = useState(null);
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +21,7 @@ export const IncomeForm = ({ createBudget }) => {
 
     setTotalIncome(total);
     handleSetAmountLeft(null, total);
-    createBudget(true);
+    handleOpenBudget();
     setSubmitted(true);
 
     salary.disabled = true;

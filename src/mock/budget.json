@@ -15,11 +15,14 @@
       "Clothes": { "limit": 0, "currentlySpent": 0 }
     },
     "savings": {
-      "Christmas": { "limit": 0, "currentlySpent": 0 },
-      "Mom's Birthday": { "limit": 0, "currentlySpent": 0 },
-      "Dad's Birthday": { "limit": 0, "currentlySpent": 0 },
-      "Lubo's Birthday": { "limit": 0, "currentlySpent": 0 },
-      "Summer Vacation": { "limit": 0, "currentlySpent": 0 }
+      "primary": { "General Savings": 0, "Investments": 0 },
+      "secondary": {
+        "Christmas": 0,
+        "Mom's Birthday": 0,
+        "Dad's Birthday": 0,
+        "Lubo's Birthday": 0,
+        "Summer Vacation": 0
+      }
     }
   },
   "expenses": [

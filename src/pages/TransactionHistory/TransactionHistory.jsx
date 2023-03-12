@@ -8,9 +8,9 @@ export const TransactionHistory = () => {
     queryKey: queryKeys.getExpenses,
     queryFn: budgetApi.getExpenses,
   });
+
   const columns = useColumns();
-  console.log(columns);
-  console.log(rows);
+
   return (
     <div style={{ width: '100%', height: '450px' }}>
       {!isLoading && (

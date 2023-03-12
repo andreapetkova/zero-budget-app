@@ -1,4 +1,4 @@
-import { useIncomeContext } from '../../../context/IncomeContext.context';
+import { useIncomeContext } from '../../../context';
 import { stringFormattingForInputId } from '../../../helpers/stringFormattingForInputId';
 import { InputField } from '../../Income/InputField';
 import { Title } from '../../Title/Title';

@@ -8,10 +8,24 @@ export const budgetApi = {
 
     return response.data;
   },
+  getNeedsBudget: async () => {
+    const response = await axios.get(
+      'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/needs.json',
+    );
+
+    return response.data;
+  },
   postNeedsBudget: async payload => {
     const response = await axios.post(
       'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/needs.json',
       payload,
+    );
+
+    return response.data;
+  },
+  getWantsBudget: async () => {
+    const response = await axios.get(
+      'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/wants.json',
     );
 
     return response.data;
@@ -24,9 +38,16 @@ export const budgetApi = {
 
     return response.data;
   },
+  getSavingsBudget: async () => {
+    const response = await axios.get(
+      'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/savings.json',
+    );
+
+    return response.data;
+  },
   postSavingsBudget: async payload => {
     const response = await axios.post(
-      'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/wants.json',
+      'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/savings.json',
       payload,
     );
 

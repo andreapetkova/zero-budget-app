@@ -1,4 +1,4 @@
-import { useIncomeContext } from '../../../context/IncomeContext.context';
+import { useIncomeContext } from '../../../context';
 import { stringFormattingForInputId } from '../../../helpers/stringFormattingForInputId';
 import { InputField } from '../../Income/InputField';
 import styles from './CategoryItem.module.css';
@@ -8,7 +8,7 @@ export const CategoryItem = ({ title }) => {
 
   const handleOnAdd = () => {
     const currentAmount = document.getElementById(stringFormattingForInputId(title));
-    console.log(currentAmount.value);
+
     try {
       handleSetAmountLeft(Number(currentAmount.value));
     } catch (err) {
