@@ -3,6 +3,8 @@ import { CategoryItem } from './CategoryItem/CategoryItem';
 import styles from './CategoryForm.module.css';
 import { useBudgetContext } from '../../context';
 import { useEffect } from 'react';
+import { constructPayload } from '../../helpers/constructPayload';
+import { budgetApi } from '../../services';
 
 export const CategoryForm = ({ title, items }) => {
   let inputStyle = styles.container;
@@ -22,7 +24,7 @@ export const CategoryForm = ({ title, items }) => {
       break;
   }
 
-  const categoryNames = Object.keys(items);
+  const categoryNames = Object.keys(items).sort();
 
   useEffect(() => {
     if (openBudget) {
@@ -32,9 +34,7 @@ export const CategoryForm = ({ title, items }) => {
         e.preventDefault();
         const formData = new FormData(document.getElementById(title));
 
-        for (var [key, value] of formData.entries()) {
-          console.log(key, value);
-        }
+        const payload = constructPayload({ type: title, items: formData });
       });
     }
   }, [openBudget, title]);

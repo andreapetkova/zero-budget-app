@@ -15,8 +15,8 @@ export const budgetApi = {
 
     return response.data;
   },
-  postNeedsBudget: async payload => {
-    const response = await axios.post(
+  putNeedsBudget: async payload => {
+    const response = await axios.put(
       'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/needs.json',
       payload,
     );
@@ -30,8 +30,8 @@ export const budgetApi = {
 
     return response.data;
   },
-  postWantsBudget: async payload => {
-    const response = await axios.post(
+  putWantsBudget: async payload => {
+    const response = await axios.put(
       'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/wants.json',
       payload,
     );
@@ -45,8 +45,8 @@ export const budgetApi = {
 
     return response.data;
   },
-  postSavingsBudget: async payload => {
-    const response = await axios.post(
+  putSavingsBudget: async payload => {
+    const response = await axios.put(
       'https://zero-budget-app-default-rtdb.europe-west1.firebasedatabase.app/budget/savings.json',
       payload,
     );
