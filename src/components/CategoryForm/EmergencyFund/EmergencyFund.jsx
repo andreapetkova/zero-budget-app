@@ -1,7 +1,8 @@
 import { useIncomeContext } from '../../../context';
 import { stringFormattingForInputId } from '../../../helpers';
-import { InputField } from '../../Income/InputField';
+import { InputField } from '../../InputField';
 import { Title } from '../../Title/Title';
+
 import styles from './EmergencyFund.module.css';
 
 export const EmergencyFund = () => {

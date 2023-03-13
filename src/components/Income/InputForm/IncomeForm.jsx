@@ -1,7 +1,8 @@
 import styles from './IncomeForm.module.css';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { useState } from 'react';
-import { InputField } from '../InputField';
+
+import { InputField } from '../../InputField';
 import { useBudgetContext, useIncomeContext } from '../../../context';
 import { Chip } from '../../Chip/Chip';
 

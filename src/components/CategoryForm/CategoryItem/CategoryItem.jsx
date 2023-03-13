@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useIncomeContext } from '../../../context';
-
-import { InputField } from '../../Income/InputField';
+import { InputField } from '../../InputField';
 
 import styles from './CategoryItem.module.css';
 

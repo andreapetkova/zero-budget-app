@@ -1,5 +1,5 @@
-import { stringFormattingForInputId } from '../../../helpers';
-import { stringFormattingForInputTitle } from '../../../helpers';
+import { stringFormattingForInputId } from '../../helpers';
+import { stringFormattingForInputTitle } from '../../helpers';
 import styles from './InputField.module.css';
 
 export const InputField = ({ title, value, onChange, onBlur, error }) => {
