@@ -1,7 +1,7 @@
 import { stringFormattingForInputTitle } from '../../helpers';
 import styles from './Chip.module.css';
 
-export const Chip = ({ title, type, value }) => {
+export const Chip = ({ title, type, value, style }) => {
   const labelTitle = stringFormattingForInputTitle(title);
 
   let chipStyle = styles.chip;
@@ -20,7 +20,9 @@ export const Chip = ({ title, type, value }) => {
   return (
     <div className={styles.container}>
       <p>{labelTitle}</p>
-      <p className={chipStyle}>{value}</p>
+      <p className={chipStyle} style={style}>
+        {value}
+      </p>
     </div>
   );
 };

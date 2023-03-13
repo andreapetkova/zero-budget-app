@@ -1,11 +1,11 @@
 export const queryKeys = {
   getMonthlyBudget: ['getMonthlyBudget'],
   getNeedsBudget: ['getNeedsBudget'],
-  postNeedsBudget: ['postNeedsBudget'],
+  putNeedsBudget: ['putNeedsBudget'],
   getWantsBudget: ['getWantsBudget'],
-  postWantsBudget: ['postWantsBudget'],
+  putWantsBudget: ['putWantsBudget'],
   getSavingsBudget: ['getSavingsBudget'],
-  postSavingsBudget: ['postSavingsBudget'],
+  putSavingsBudget: ['putSavingsBudget'],
   getExpenses: ['getExpenses'],
   postExpense: ['postExpense'],
 };

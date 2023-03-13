@@ -55,3 +55,19 @@
   background-color: var(--color-lightGreen);
   color: var(--color-white);
 }
+
+.item {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-grey);
+}
+
+.submitted-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submitted-form-data {
+  display: flex;
+  justify-content: center;
+}

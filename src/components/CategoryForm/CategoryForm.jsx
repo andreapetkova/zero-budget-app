@@ -1,14 +1,17 @@
-import { Title } from '../Title/Title';
-import { CategoryItem } from './CategoryItem';
-import styles from './CategoryForm.module.css';
-import { useBudgetContext } from '../../context';
-import { useEffect } from 'react';
+import { useCallback, useState } from 'react';
+import { useMutateCreateBudget } from '../../hooks';
 import { constructBudgetPayload } from '../../helpers';
-import { budgetApi } from '../../services';
+
+import { CreateBudgetForm } from './CreateBudgetForm';
+import { SubmittedForm } from './SubmittedForm';
+
+import styles from './FormStyles.module.css';
 
 export const CategoryForm = ({ title, items }) => {
+  const [submitted, setSubmitted] = useState(false);
+  const { mutateCreateNeedsBudget, mutateCreateWantsBudget } = useMutateCreateBudget();
+
   let inputStyle = styles.container;
-  const { openBudget } = useBudgetContext();
 
   switch (title) {
     case 'needs':
@@ -26,44 +29,52 @@ export const CategoryForm = ({ title, items }) => {
 
   const categoryNames = Object.keys(items).sort();
 
-  useEffect(() => {
-    if (openBudget) {
-      const budgetForm = document.getElementById(title);
+  const sendBudgetRequest = useCallback(
+    (title, formData) => {
+      const payload = constructBudgetPayload(formData);
 
-      budgetForm.addEventListener('submit', e => {
-        e.preventDefault();
-        const formData = new FormData(document.getElementById(title));
+      switch (title) {
+        case 'needs':
+          mutateCreateNeedsBudget.mutate(payload);
+          break;
+        case 'wants':
+          mutateCreateWantsBudget.mutate(payload);
+          break;
+        case 'savings':
+          //implement savings logic
+          break;
+        default:
+          break;
+      }
+    },
+    [mutateCreateNeedsBudget, mutateCreateWantsBudget],
+  );
 
-        const payload = constructBudgetPayload(formData);
+  const handleOnSubmit = useCallback(() => {
+    const budgetForm = document.getElementById(title);
 
-        switch (title) {
-          case 'needs':
-            budgetApi.putNeedsBudget(payload);
-            break;
-          case 'wants':
-            budgetApi.putWantsBudget(payload);
-            break;
-          case 'savings':
-            //implement savings logic
-            break;
-          default:
-            break;
-        }
-      });
-    }
-  }, [openBudget, title]);
+    budgetForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById(title));
 
-  return (
-    <form className={inputStyle} id={title} autoComplete='off'>
-      <div>
-        <Title title={title} />
-        {categoryNames.map(category => (
-          <CategoryItem title={category} key={Math.random()} />
-        ))}
-      </div>
-      <button type='submit' className={styles['submit-button']}>
-        Submit
-      </button>
-    </form>
+      sendBudgetRequest(title, formData);
+      setSubmitted(true);
+    });
+  }, [sendBudgetRequest, title]);
+
+  return !submitted ? (
+    <CreateBudgetForm
+      inputStyle={inputStyle}
+      title={title}
+      categoryNames={categoryNames}
+      handleOnSubmit={handleOnSubmit}
+    />
+  ) : (
+    <SubmittedForm
+      inputStyle={inputStyle}
+      title={title}
+      categoryNames={categoryNames}
+      items={items}
+    />
   );
 };

@@ -1,7 +1,8 @@
 import { Title } from '../Title/Title';
 import { CategoryItem } from './CategoryItem';
-import styles from './CategoryForm.module.css';
 import { EmergencyFund } from './EmergencyFund';
+
+import styles from './FormStyles.module.css';
 
 export const CategorySavingsForm = ({ title, primaryItems, secondaryItems }) => {
   let inputStyle = `${styles.container} + ' ' + ${styles.savings}`;

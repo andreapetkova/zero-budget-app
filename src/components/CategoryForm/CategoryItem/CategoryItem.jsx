@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useIncomeContext } from '../../../context';
+
 import { InputField } from '../../Income/InputField';
+
 import styles from './CategoryItem.module.css';
 
 export const CategoryItem = ({ title }) => {
