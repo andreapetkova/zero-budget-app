@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { CategorySavingsTable, CategoryTable } from '../../../../components/CategoryTable';
+import { CategorySavingsForm, CategoryForm } from '../../../../components/CategoryForm';
 import { budgetApi, queryKeys } from '../../../../services';
 import styles from './CreateBudget.module.css';
 
@@ -13,9 +13,9 @@ export const CreateBudget = () => {
     <div className={styles['flex-grid']}>
       {isFetched && (
         <>
-          <CategoryTable title={'needs'} items={data.needs} />
-          <CategoryTable title={'wants'} items={data.wants} />
-          <CategorySavingsTable
+          <CategoryForm title={'needs'} items={data.needs} />
+          <CategoryForm title={'wants'} items={data.wants} />
+          <CategorySavingsForm
             title={'savings'}
             primaryItems={data.savings.primary}
             secondaryItems={data.savings.secondary}

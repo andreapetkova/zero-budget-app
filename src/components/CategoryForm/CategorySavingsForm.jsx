@@ -1,9 +1,9 @@
 import { Title } from '../Title/Title';
-import { CategoryItem } from './CategoryItem/CategoryItem';
+import { CategoryItem } from './CategoryItem';
 import styles from './CategoryForm.module.css';
 import { EmergencyFund } from './EmergencyFund';
 
-export const CategorySavingsTable = ({ title, primaryItems, secondaryItems }) => {
+export const CategorySavingsForm = ({ title, primaryItems, secondaryItems }) => {
   let inputStyle = `${styles.container} + ' ' + ${styles.savings}`;
 
   return (

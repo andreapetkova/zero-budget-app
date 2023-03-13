@@ -1,9 +1,9 @@
 import { Title } from '../Title/Title';
-import { CategoryItem } from './CategoryItem/CategoryItem';
+import { CategoryItem } from './CategoryItem';
 import styles from './CategoryForm.module.css';
 import { useBudgetContext } from '../../context';
 import { useEffect } from 'react';
-import { constructPayload } from '../../helpers/constructPayload';
+import { constructBudgetPayload } from '../../helpers';
 import { budgetApi } from '../../services';
 
 export const CategoryForm = ({ title, items }) => {
@@ -34,7 +34,21 @@ export const CategoryForm = ({ title, items }) => {
         e.preventDefault();
         const formData = new FormData(document.getElementById(title));
 
-        const payload = constructPayload({ type: title, items: formData });
+        const payload = constructBudgetPayload(formData);
+
+        switch (title) {
+          case 'needs':
+            budgetApi.putNeedsBudget(payload);
+            break;
+          case 'wants':
+            budgetApi.putWantsBudget(payload);
+            break;
+          case 'savings':
+            //implement savings logic
+            break;
+          default:
+            break;
+        }
       });
     }
   }, [openBudget, title]);
