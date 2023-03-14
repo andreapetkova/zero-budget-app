@@ -25,14 +25,9 @@
       }
     }
   },
-  "expenses": [
-    { "id": 0, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
-    { "id": 1, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 },
-    { "id": 2, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
-    { "id": 3, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 },
-    { "id": 4, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
-    { "id": 5, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 },
-    { "id": 6, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
-    { "id": 7, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 }
-  ]
+  "expenses": {
+    "0": { "id": 0, "category": "Groceries", "date": "12 Feb 2023", "amount": 120.0 },
+    "1": { "id": 1, "category": "Take Out", "date": "5 Mar 2023", "amount": 50.0 },
+    "2": { "id": 2, "category": "Clothes", "date": "7 Mar 2023", "amount": 70.0 }
+  }
 }

@@ -5,10 +5,6 @@
   position: relative;
 }
 
-.input-label {
-  color: var(--color-grey);
-}
-
 .submit-button {
   background-color: var(--color-darkerLightGreen);
   border: none;
