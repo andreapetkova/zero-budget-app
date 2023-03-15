@@ -18,7 +18,7 @@ export const IncomeForm = () => {
   const onSubmit = event => {
     event.preventDefault();
 
-    const form = document.getElementById('incomeForm');
+    const form = document.querySelector('#incomeForm');
     const total = salary + extraIncome;
 
     setTotalIncome(total);

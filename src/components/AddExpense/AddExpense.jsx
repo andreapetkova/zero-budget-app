@@ -54,7 +54,7 @@ export const AddExpense = () => {
           >
             {isFetched &&
               Object.keys({ ...data.needs, ...data.wants }).map(category => (
-                <MenuItem value={category} key={category}>
+                <MenuItem value={category} key={Math.random().toString(16).slice(2)}>
                   {category}
                 </MenuItem>
               ))}

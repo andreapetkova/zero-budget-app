@@ -27,7 +27,10 @@ export const CategoryForm = ({ title, items }) => {
       break;
   }
 
-  const categoryNames = Object.keys(items).sort();
+  let categoryNames = [];
+  for (const category in items) {
+    categoryNames.push(category);
+  }
 
   const sendBudgetRequest = useCallback(
     (title, formData) => {
@@ -66,14 +69,14 @@ export const CategoryForm = ({ title, items }) => {
     <CreateBudgetForm
       inputStyle={inputStyle}
       title={title}
-      categoryNames={categoryNames}
+      categoryNames={categoryNames.sort()}
       handleOnSubmit={handleOnSubmit}
     />
   ) : (
     <SubmittedForm
       inputStyle={inputStyle}
       title={title}
-      categoryNames={categoryNames}
+      categoryNames={categoryNames.sort()}
       items={items}
     />
   );
