@@ -4,20 +4,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px auto;
-  padding: 10px 100px;
-  border-radius: 30px;
+  margin: 1.25rem auto;
+  padding: 1rem 6rem;
+  border-radius: 2rem;
   border: 6px solid var(--color-darkerLightGreen);
   background-color: var(--color-lightGreen);
 }
-
 .header {
-  font-size: 50px;
+  font-size: 3.25rem;
   font-family: 'Rubik Mono One', sans-serif;
 }
 
 .subtitle {
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
 }
